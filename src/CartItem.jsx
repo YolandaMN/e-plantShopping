@@ -18,6 +18,10 @@ const CartItem = ({ onContinueShopping }) => {
     return total; // Return final total
   };
 
+  const calculateTotalQuantity = () => {
+    return CartItems ? CartItems.reduce((total, item) => total + item.quantity, 0) : 0;
+     };
+
   const handleContinueShopping = (e) => {
     e.preventDefault(); // Prevent default link/button behavior
     onContinueShopping(e); // Call the function passed from the parent
